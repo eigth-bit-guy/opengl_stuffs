@@ -1,2 +1,2 @@
 # Opengl Stuffs
--- Examples in opengl for the focus in Linux OS
+-- Examples in opengl for the focus in GNU/Linux OS
