@@ -113,8 +113,8 @@ int main(int argc, char *argv)
   SDL_Window *window = SDL_CreateWindow("Triangle",
 										 SDL_WINDOWPOS_CENTERED,
 										 SDL_WINDOWPOS_CENTERED,
-										 340,
-										 180,
+										 540,
+										 380,
 										 SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
   SDL_GL_CreateContext(window);
   GLenum glew = glewInit();
