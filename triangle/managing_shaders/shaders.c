@@ -1,4 +1,7 @@
+#include <stdio.h>
+#include <GL/glew.h>
 #include <SDL2/SDL.h>
+
 
 char *file_read(const char *file_name)
 {
@@ -49,3 +52,37 @@ void print_log(GLuint object)
   fprintf(stderr, log);
   free(log);
 }
+
+//GLSL version
+GLuint create_shader(const char *file_name, GLenum type)
+{
+  const GLchar *source = file_read(file_name);
+  if(source == NULL){
+	fprintf(stderr, "Error opening: %s\n", file_name);
+	return 0;
+  }
+  GLuint res = glCreateShader(type);
+  const char *sources[] =
+	{#ifdef GL_ES_VERSION_2_0
+	 "#version 100\n"
+    #else
+	 "#version 120\n"
+    #endif
+	 ,
+	 source};
+  glShaderSource(res, 2, sourcesm NULL);
+  free((void*)source);
+
+  glCompileShader(res);
+  GLint compile_ok = GL_FALSE;
+  glGetShaderiv(res, GL_COMPILE_STATUS, &compile_ok);
+  if(compile_ok == GL_FALSE){
+	fprintf(stderr, file_name);
+	print_log(res);
+	glDeleteShader(res);
+	return 0;
+  }
+  return res;
+}
+
+
