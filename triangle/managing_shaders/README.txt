@@ -1,4 +1,4 @@
 # Manaiging shaders
 
-todo: include shaders.c
+todo: test the shaders.c
 
