@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <GL/glew.h>
 #include <SDL2/SDL.h>
+#include "shaders.h"
 
 int render(SDL_Window *window)
 {
