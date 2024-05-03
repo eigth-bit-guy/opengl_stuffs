@@ -3,7 +3,7 @@ CFLAGS=$(shell sdl2-config --cflags)  $(EXTRA_CFLAGS)
 EXTRA_LDLIBS?=-lGL
 EXTRA_CFLGAS?=-Wall -Wextra -ggdb
 
-main: main.o
+main: main.o common/shaders.o
 	gcc -o main main.o $(LDLIBS) $(CFLAGS)
 
 main.o: main.c
