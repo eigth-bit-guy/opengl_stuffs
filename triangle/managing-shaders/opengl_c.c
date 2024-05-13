@@ -47,7 +47,7 @@ int init_ressources(void)
   glAttachShader(program, vs);
   glAttachShader(program, fs);
   glLinkProgram(program);
-  glGetProgramiv(program, GL_LINK_STATUS, &link_ok);
+   glGetProgramiv(program, GL_LINK_STATUS, &link_ok);
   if(!link_ok){
 	fprintf(stderr, "Error: in glLinkProgram\n");
 	return FALSE;
